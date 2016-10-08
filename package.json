@@ -1,0 +1,11 @@
+{
+  "name": "upstage-web",
+  "version": "1.0.0",
+  "description": "UpStage Community Web App",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Majd Murad",
+  "license": "MIT"
+}
