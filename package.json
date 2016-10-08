@@ -4,7 +4,8 @@
   "description": "UpStage Community Web App",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base app --hot --inline --historyApiFallback"
+    "dev": "webpack-dev-server --content-base app --hot --inline --historyApiFallback",
+    "postinstall": "webpack -p --config ./webpack.config.js --progress"
   },
   "author": "Majd Murad",
   "license": "MIT",
