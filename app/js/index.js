@@ -7,7 +7,7 @@ const app = document.getElementById('app')
 class Layout extends React.Component {
     render() {
         return (
-            <h1>It WOO23RK1ED</h1>
+            <h1>It aWOO23RK1ED</h1>
         )
     }
 }
