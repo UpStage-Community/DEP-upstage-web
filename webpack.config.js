@@ -27,6 +27,7 @@ module.exports = {
     },
     output: {
         path: __dirname + '/app',
+        publicPath: '/',
         filename: "index.min.js"
     },
     plugins: debug 
