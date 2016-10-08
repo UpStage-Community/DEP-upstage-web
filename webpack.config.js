@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
     context: __dirname + "/app",
-    devtool: debug ? "inline-sourcemap" : null,
+    devtool: debug ? "inline-sourcemap" : 'sourcemap',
     entry: "./js/index.js",
     module: {
         loaders: [
@@ -35,5 +35,6 @@ module.exports = {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+        new webpack.DefinePlugin({'process.env': {'NODE_ENV': JSON.stringify('production')}})
     ],
 };
