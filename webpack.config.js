@@ -1,5 +1,6 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     context: __dirname + "/app",
@@ -8,7 +9,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js?$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
@@ -17,6 +18,7 @@ module.exports = {
                 }
             }, { 
                 test: /\.scss?$/,
+                exclude: /node_modules/,
                 loader: 'style!css!sass',
                 include: __dirname + '/app'
             }, { 
@@ -30,6 +32,12 @@ module.exports = {
         publicPath: '/',
         filename: "index.min.js"
     },
+    resolve: {
+        root: [path.resolve('./app'), path.resolve('./node_modules')],
+        modulesDirectories: ['node_modules', 'styles', 'js', 'images'],
+        extensions: ['', '.js', '.jsx', '.json', '.scss']
+    },
+
     plugins: debug 
     ? [] 
     : [

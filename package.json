@@ -4,14 +4,16 @@
   "description": "UpStage Community Web App",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base app --hot --inline --historyApiFallback",
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base app --hot --inline --historyApiFallback",
     "postinstall": "webpack -p"
   },
   "author": "Majd Murad",
   "license": "MIT",
   "dependencies": {
+    "history": "^1.17.0",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
