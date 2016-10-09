@@ -2,6 +2,8 @@ var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 
+// from: http://ditrospecta.com/javascript/react/es6/webpack/heroku/2015/08/08/deploying-react-webpack-heroku.html
+// from: http://revelry.media/tech-talk/2016/2/15/getting-a-simple-react-app-on-heroku
 module.exports = {
     context: __dirname + "/app",
     devtool: debug ? "inline-sourcemap" : 'sourcemap',
