@@ -1,0 +1,18 @@
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin mobile {
+    @media only screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+        @content;
+    }
+}

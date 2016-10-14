@@ -1,0 +1,7 @@
+@import "colors";
+@import "mixins";
+
+body {
+    background-color: $body-color;
+    color: $font-color
+}
