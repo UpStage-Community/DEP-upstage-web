@@ -2,4 +2,13 @@
 
 .header {
     background-color: $header-color;
+    height: 40px;
+
+    @include tablet {
+        height: 100px;
+    }
+
+    @include mobile {
+        height: 140px;
+    }
 }
