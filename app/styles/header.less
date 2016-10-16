@@ -1,0 +1,25 @@
+@import (reference) "main";
+
+.header {
+    background-color: @header-color;
+    height: 40px;
+    font-weight: bold;
+    div {
+        color: black;
+    }
+    .center-area{
+        border: 1px solid blue;
+        display: inline-block;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .tablet-view ({
+        height: 80px;
+    });
+
+    .mobile-view ({
+        height: 60px;
+    });
+
+}

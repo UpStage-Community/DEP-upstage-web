@@ -7,7 +7,7 @@ import 'styles/main'
 export default class Layout extends React.Component {
     render() {
         return (
-            <div class="layout">
+            <div className="layout">
                 <Header />
                 {this.props.children}
             </div>

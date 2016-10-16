@@ -16,12 +16,12 @@ module.exports = {
                 loader: 'babel-loader',
                 query: {
                     presets: [ 'react', 'es2015', 'stage-0' ],
-                    plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
+                    plugins: [ 'transform-decorators-legacy', 'transform-class-properties' ]
                 }
             }, { 
-                test: /\.scss?$/,
+                test: /\.less?$/,
                 exclude: /node_modules/,
-                loader: 'style!css!sass',
+                loader: "style!css!less!",
                 include: __dirname + '/app'
             }, { 
                 test: /\.png$/,
@@ -37,7 +37,7 @@ module.exports = {
     resolve: {
         root: [path.resolve('./app'), path.resolve('./node_modules')],
         modulesDirectories: ['node_modules', 'styles', 'js', 'images'],
-        extensions: ['', '.js', '.jsx', '.json', '.scss']
+        extensions: ['', '.js', '.jsx', '.json', '.less']
     },
 
     plugins: debug 
