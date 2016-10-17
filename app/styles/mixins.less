@@ -5,14 +5,14 @@
     border-radius: @radius;
 }
 
-.mobile-view(@rules) {
+.mobile-view(@content) {
     @media only screen and (max-width: 480px) {
-        @rules();
+        @content();
     }
 }
 
-.tablet-view(@rules) {
+.tablet-view(@content) {
     @media only screen and (min-width: 481px) and (max-width: 768px) {
-        @rules();
+        @content();
     }
 }
