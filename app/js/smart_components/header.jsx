@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+
 import 'styles/header'
 
 @connect((store) => {
@@ -13,7 +14,7 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <div className="center-area">
-                    UpStage
+                    UpStage Community
                 </div>
             </div>
         )

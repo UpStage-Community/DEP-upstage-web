@@ -1,25 +1,39 @@
 @import (reference) "main";
 
+@header-mobile-height: 60px;
+@header-tablet-height: 80px;
+@header-desktop-height: 40px;
+
+@center-area-width: 40%;
+@center-area-mobile-width: 50%;
+
 .header {
     background-color: @header-color;
-    height: 40px;
-    font-weight: bold;
-    div {
-        color: black;
-    }
+    height: @header-desktop-height;
+    line-height: @header-desktop-height;
+
     .center-area{
-        border: 1px solid blue;
         display: inline-block;
-        width: 50%;
-        margin: 0 auto;
+        width: @center-area-width;
+        margin: 0 30%;
+        text-align: center;
     }
 
     .tablet-view ({
-        height: 80px;
+        height: @header-tablet-height;
+        .center-area {
+            line-height: @header-tablet-height;
+        }
     });
 
     .mobile-view ({
-        height: 60px;
+        height: @header-mobile-height;
+        .center-area {
+            line-height: @header-mobile-height;
+            width: @center-area-mobile-width;
+            margin: 0 25%;
+
+        }
     });
 
 }
