@@ -33,10 +33,10 @@
     }
 
     .card-content {
-        padding: 10px;
-        font-size: 12px;
+        padding: 16px;
+        font-size: 16px;
         div {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             overflow: hidden;
             text-overflow: ellipsis;
         }
@@ -45,6 +45,18 @@
             padding: 20px;
             div {
                 margin-bottom: 20px;
+            }
+        });
+
+        .tablet-view({
+            font-size: 14px;
+        });
+
+        .large-view({
+            font-size: 18px;
+            padding: 20px;
+            div {
+                margin-bottom: 14px;
             }
         });
     }
@@ -65,14 +77,15 @@
 }
 
 .productions-container {
-    max-width: 95%;
+    width: 95%;
+    max-width: 1400px;
     margin: 20px auto;
 }
 
 .production {
 
     .title {
-        font-size: 16px;
+        font-size: 20px;
         text-align: center;
         font-style: italic;
     }
@@ -80,6 +93,18 @@
     }
 
     .mobile-view({
+        .title {
+            font-size: 24px;
+        }
+    });
+
+    .tablet-view({
+        .title {
+            font-size: 20px;
+        }
+    });
+
+    .large-view({
         .title {
             font-size: 24px;
         }
