@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux'
 
 import { getProductions } from 'api/index'
 
+import Production from 'stupid_components/production'
+
 import 'styles/productions'
 
 function mapStateToProps(store) {
@@ -21,17 +23,14 @@ export default class ProductionsPage extends React.Component {
         this.props.getProductions()
     }
     render() {
-        console.log(this.props)
         return (
             <div className="productions-page">
-                Productions!
-                {this.props.productions.index.map((production) => {
-                    return (
-                        <div>
-                            {production.title}
-                        </div>
+                
+                <div className="productions-container">
+                    {this.props.productions.index.map((production) => {
+                        return <Production key={production.id} production={production} />}
                     )}
-                )}
+                </div>
             </div>
         )
     }
