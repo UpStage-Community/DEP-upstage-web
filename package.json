@@ -21,7 +21,8 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.7.0",
     "redux-promise-middleware": "^4.1.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -35,7 +36,6 @@
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
     "lodash": "^4.16.4",
-    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   }
