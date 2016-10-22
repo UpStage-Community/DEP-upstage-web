@@ -1,16 +1,75 @@
 @import (reference) "main";
 
+.card-container {
+    display: inline-block;
+    width: 25%;
+    padding-top: 37.5%;
+    position: relative;
+    margin-bottom: 10px;
+
+    .card {
+        position: absolute;
+        top: 0;
+        background-color: black;
+        width: 90%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0 5%;
+
+    }
+
+    .card-image-container {
+        overflow: hidden;
+        position: relative;
+        padding-top: 50%;
+        width: 100%;
+        img {
+            position: absolute;
+            top: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .card-content {
+        padding: 10px;
+        font-size: 12px;
+        div {
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .mobile-view({
+            font-size: 18px;
+            padding: 20px;
+            div {
+                margin-bottom: 20px;
+            }
+        });
+    }
+    
+    .tablet-view ({
+        width: 33%;
+        padding-top: 49.5%;
+    });
+
+    .mobile-view({
+        width: 100%;
+        padding-top: 150%;
+    });
+    
+}
 .productions {
     text-align: center;
 }
 
 .productions-container {
-    max-width: 750px;
+    max-width: 95%;
     margin: 20px auto;
 }
 
 .production {
-
 
     .title {
         font-size: 16px;
@@ -19,36 +78,10 @@
     }
     .short-description {
     }
-}
 
-.card {
-    vertical-align: top;
-    background-color: black;
-    display: inline-block;
-    width: 240px;
-    height: 350px;
-    overflow: hidden;
-    margin: 0 5px 10px;
-
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.card-image-container {
-    overflow: hidden;
-    height: 120px;
-    width: 100%;
-}
-
-.card-content {
-    padding: 10px;
-    div {
-        font-size: 12px;
-        margin-bottom: 10px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+    .mobile-view({
+        .title {
+            font-size: 24px;
+        }
+    });
 }
