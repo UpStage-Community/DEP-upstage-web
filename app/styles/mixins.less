@@ -17,6 +17,18 @@
     }
 }
 
+.tablet-landscape-view(@content) {
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        @content();
+    }
+}
+
+.desktop-view(@content) {
+    @media only screen and (min-width: 1025px) and (max-width: 1399px) {
+        @content();
+    }
+}
+
 .large-view(@content) {
     @media only screen and (min-width: 1400px) {
         @content();

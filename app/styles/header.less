@@ -1,16 +1,15 @@
 @import (reference) "main";
 
 @header-mobile-height: 60px;
-@header-tablet-height: 80px;
-@header-desktop-height: 50px;
+@header-height: 50px;
 
 @center-area-width: 40%;
 @center-area-mobile-width: 50%;
 
 .header {
     background-color: @header-color;
-    height: @header-desktop-height;
-    line-height: @header-desktop-height;
+    height: @header-height;
+    line-height: @header-height;
     font-size: 20px;
 
     .center-area{
@@ -19,13 +18,6 @@
         margin: 0 30%;
         text-align: center;
     }
-
-    .tablet-view ({
-        height: @header-tablet-height;
-        .center-area {
-            line-height: @header-tablet-height;
-        }
-    });
 
     .mobile-view ({
         height: @header-mobile-height;
