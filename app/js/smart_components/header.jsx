@@ -4,13 +4,24 @@ import { connect } from 'react-redux'
 
 import 'styles/header'
 
-@connect((store) => {
+function mapStoreToProps(store) {
     return {
-        header: store.header
+        currentLocation: store.navigation.currentLocation
     }
-})
+}
+
+@connect(mapStoreToProps)
 
 export default class Header extends React.Component {
+
+    getClassFor(linkName) {
+        const { currentLocation } = this.props
+        if (currentLocation == linkName) {
+            return "active"
+        }
+        return ""
+    }
+
     render() {
         return (
             <div className="header">
@@ -19,8 +30,14 @@ export default class Header extends React.Component {
                 </div>
                 <div className="right-area">
                     <div className="navbar">
-                        <Link to="/productions" >Productions</Link>
-                        <Link to="/companies" >Companies</Link>
+                        <Link to="/productions" 
+                            className={this.getClassFor("Productions")}>
+                            Productions
+                        </Link>
+                        <Link to="/companies" 
+                            className={this.getClassFor("Companies")}>
+                            Companies
+                        </Link>
                     </div>
                     <div className="hamburger">
                         <i className="fa fa-bars" aria-hidden="true" />

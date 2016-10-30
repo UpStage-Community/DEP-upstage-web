@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 
-import header from 'reducers/header'
+import navigation from 'reducers/navigation'
 import productions from 'reducers/productions'
 export default combineReducers({
-    header,
+    navigation,
     productions
 })
