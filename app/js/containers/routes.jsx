@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-
 
 import Layout from 'containers/layout'
 import ProductionsPage from 'containers/productions'
+import CompaniesPage from 'containers/companies'
 
 export default class Routes extends React.Component {
     render() {
@@ -11,6 +12,7 @@ export default class Routes extends React.Component {
                 <Route path="/" component={Layout}>
                     <IndexRedirect to="productions" />
                     <Route path="productions" component={ProductionsPage} />
+                    <Route path="companies" component={CompaniesPage} />
                 </Route>
             </Router>
         )
