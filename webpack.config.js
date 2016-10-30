@@ -7,7 +7,10 @@ var path = require('path');
 module.exports = {
     context: __dirname + "/app",
     devtool: debug ? "inline-sourcemap" : 'sourcemap',
-    entry: "./js/index.js",
+    entry: [
+        'webpack-hot-middleware/client?reload=true',
+        "./js/index.js"
+    ],
     module: {
         loaders: [
             {
@@ -26,7 +29,7 @@ module.exports = {
             }, { 
                 test: /\.png$/,
                 loader: 'file' 
-            },
+            }
         ]
     },
     output: {
@@ -41,7 +44,9 @@ module.exports = {
     },
 
     plugins: debug 
-    ? [] 
+    ? [    
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()] 
     : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),

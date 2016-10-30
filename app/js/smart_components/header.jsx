@@ -13,9 +13,10 @@ export default class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <div className="center-area">
+                <div className="logo">
                     UpStage Community
                 </div>
+                <i className="fa fa-bars" aria-hidden="true" />
             </div>
         )
     }

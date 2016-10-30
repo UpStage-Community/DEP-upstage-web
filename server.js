@@ -4,6 +4,7 @@ const express = require('express')
 const path = require('path')
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
 
 const debug = process.env.NODE_ENV !== 'production';
@@ -24,8 +25,8 @@ if (debug) {
       modules: false
     }
   });
-
   app.use(middleware);
+  app.use(webpackHotMiddleware(compiler));
 
 } else {
   app.use(express.static(__dirname + '/app'));
