@@ -7,10 +7,10 @@ var path = require('path');
 module.exports = {
     context: __dirname + "/app",
     devtool: debug ? "inline-sourcemap" : 'sourcemap',
-    entry: [
+    entry: debug ? [
         'webpack-hot-middleware/client?reload=true',
         "./js/index.js"
-    ],
+    ] : "./js/index.js",
     module: {
         loaders: [
             {
