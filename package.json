@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --content-base app --hot --inline --historyApiFallback",
-    "postinstall": "webpack -p",
+    "postinstall": "webpack -p --hot",
     "start": "node server.js"
   },
   "author": "Majd Murad",
