@@ -10,3 +10,12 @@ export function getProductions(){
         })
     }
 }
+
+export function getCompanies(){
+    return dispatch => {
+        dispatch({
+            type: "FETCH_COMPANIES",
+            payload: axios.get("http://localhost:3000/companies")
+        })
+    }
+}

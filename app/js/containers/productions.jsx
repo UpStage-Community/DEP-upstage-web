@@ -8,7 +8,7 @@ import Production from 'stupid_components/production'
 
 import 'styles/productions'
 
-function mapStateToProps(store) {
+function mapStoreToProps(store) {
   return { productions: store.productions };
 }
 
@@ -16,7 +16,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getProductions }, dispatch)
 }
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(mapStoreToProps, mapDispatchToProps)
 
 export default class ProductionsPage extends React.Component {
     componentWillMount() {
@@ -25,12 +25,9 @@ export default class ProductionsPage extends React.Component {
     render() {
         return (
             <div className="productions-page">
-                
-                <div className="productions-container">
-                    {this.props.productions.index.map((production) => {
-                        return <Production key={production.id} production={production} />}
-                    )}
-                </div>
+                {this.props.productions.index.map((production) => {
+                    return <Production key={production.id} production={production} />}
+                )}
             </div>
         )
     }
