@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router'
 import { connect } from 'react-redux'
-
 
 import 'styles/header'
 
@@ -9,6 +9,7 @@ import 'styles/header'
         header: store.header
     }
 })
+
 export default class Header extends React.Component {
     render() {
         return (
@@ -16,7 +17,15 @@ export default class Header extends React.Component {
                 <div className="logo">
                     UpStage Community
                 </div>
-                <i className="fa fa-bars" aria-hidden="true" />
+                <div className="right-area">
+                    <div className="navbar">
+                        <Link to="/productions" >Productions</Link>
+                        <Link to="/companies" >Companies</Link>
+                    </div>
+                    <div className="hamburger">
+                        <i className="fa fa-bars" aria-hidden="true" />
+                    </div>
+                </div>
             </div>
         )
     }

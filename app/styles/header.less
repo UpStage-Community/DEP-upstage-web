@@ -2,6 +2,7 @@
 
 @header-mobile-height: 60px;
 @header-height: 50px;
+@header-margin: 0 25px;
 
 
 .header {
@@ -10,16 +11,48 @@
     line-height: @header-height;
     font-size: 20px;
 
-    .logo{
+    div {
         display: inline-block;
-        margin: 0 25px;
+    }
+
+    .logo{
+        margin: @header-margin;
+    }
+
+    .right-area {
+        float: right;
+        margin: @header-margin;
+
+        .navbar {
+            vertical-align: top;
+            .active {
+                text-decoration: underline;
+            }
+            a {
+                margin-right: 25px;
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+        }
     }
 
     .mobile-view ({
         height: @header-mobile-height;
+
         .logo {
             line-height: @header-mobile-height;
+        }
+        .navbar {
+            display: none;
+        }
+    });
 
+    .tablet-view ({
+        .navbar {
+            display: none;
         }
     });
 
