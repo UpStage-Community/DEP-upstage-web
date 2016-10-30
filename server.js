@@ -26,12 +26,12 @@ if (debug) {
     }
   });
   app.use(middleware);
+  app.use(webpackHotMiddleware(compiler));
 
 } else {
   app.use(express.static(__dirname + '/app'));
 
 }
-app.use(webpackHotMiddleware(compiler));
 
 app.get('*', function (request, response){
     response.sendFile(path.resolve(__dirname, 'app', 'index.html'))
