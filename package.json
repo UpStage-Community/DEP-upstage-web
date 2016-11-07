@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "UpStage Community Web App",
   "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UpStage-Community/upstage-web.git"
+  },
   "scripts": {
     "postinstall": "webpack -p --hot",
     "start": "node server.js"
@@ -19,6 +23,7 @@
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.0",
     "redux-promise-middleware": "^4.1.0",
