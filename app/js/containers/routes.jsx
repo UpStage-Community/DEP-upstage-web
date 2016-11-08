@@ -7,10 +7,10 @@ import Layout from 'containers/layout'
 import ProductionsPage from 'containers/productions'
 import CompaniesPage from 'containers/companies'
 
-import { navigateToProductions, navigateToCompanies } from 'actions/navigation'
+import { navigateToProductions, navigateToCompanies, navigateToLogin } from 'actions/navigation'
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ navigateToProductions, navigateToCompanies }, dispatch)
+    return bindActionCreators({ navigateToProductions, navigateToCompanies, navigateToLogin }, dispatch)
 }
 
 @connect(null, mapDispatchToProps)

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
+import { openLoginModal } from 'actions/navigation'
 import 'styles/header'
 
 function mapStoreToProps(store) {
@@ -10,7 +12,11 @@ function mapStoreToProps(store) {
     }
 }
 
-@connect(mapStoreToProps)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ openLoginModal }, dispatch)
+}
+
+@connect(mapStoreToProps, mapDispatchToProps)
 
 export default class Header extends React.Component {
 
@@ -39,6 +45,9 @@ export default class Header extends React.Component {
                             Companies
                         </Link>
                     </div>
+                    <a onClick={this.props.openLoginModal} >
+                        Log In
+                    </a>
                     <div className="hamburger">
                         <i className="fa fa-bars" aria-hidden="true" />
                     </div>

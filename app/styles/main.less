@@ -10,12 +10,34 @@ body {
     font-weight: 300;
 }
 
+input, label, div, ul, a, li, button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
 a {
     text-decoration: none;
     color: @font-color;
 
     &:hover {
         color: red;
+    }
+}
+
+button {
+    width: 275px;
+    height: 50px;
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 20px;
+    background-color: @header-color;
+    color: white;
+    &:focus {
+        outline: none;
     }
 }
 
