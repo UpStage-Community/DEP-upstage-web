@@ -24,7 +24,7 @@ export default class Layout extends React.Component {
                 </div>
                 <BottomNavigation />
 
-                <LoginModal open={this.props.loginModalOpen}/>
+                <LoginModal />
             </div>
         )
     }

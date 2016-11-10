@@ -9,13 +9,33 @@ import StandardModal from 'modals/standard-modal'
 
 import 'styles/login'
 
+function mapStoreToProps(store) {
+    return store.modals.loginModal
+}
+
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({ closeLoginModal }, dispatch)
 }
 
-@connect(null, mapDispatchToProps)
+@connect(mapStoreToProps, mapDispatchToProps)
 
 export default class LoginModal extends React.Component {
+    errors() {
+        if (this.props.errors) {
+            return (
+                <div>
+                    { this.props.errors.map ((error) => {
+                        return (
+                            <div key={error} className="error">
+                                {error}
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        }
+    }
+
     render(){
         return (
             <StandardModal 
@@ -32,12 +52,9 @@ export default class LoginModal extends React.Component {
                         Password
                         <input className="input" type="password"/>
                     </label>
+                    { this.errors() }
                 </div>
             </StandardModal>
         )
     }
-}
-
-LoginModal.propTypes = {
-    open: React.PropTypes.bool.isRequired
 }
