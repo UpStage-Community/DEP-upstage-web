@@ -44,7 +44,7 @@ export default class StandardModal extends React.Component {
                     {this.props.children}
                 </div>
                 <div className="button-container">
-                    <Button onClick={this.props.closeMethod} text={buttonText} className="modal-button" />
+                    <Button onClick={this.props.buttonMethod} text={buttonText} className="modal-button" />
                 </div>
             </Modal>
         )
@@ -54,6 +54,7 @@ export default class StandardModal extends React.Component {
 StandardModal.propTypes = {
     open: React.PropTypes.bool.isRequired,
     closeMethod: React.PropTypes.func.isRequired,
+    buttonMethod: React.PropTypes.func,
     title: React.PropTypes.string.isRequired,
     backgroundCloseDisabled: React.PropTypes.bool,
     buttonText: PropTypes.string

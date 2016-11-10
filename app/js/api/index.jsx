@@ -19,3 +19,12 @@ export function getCompanies(){
         })
     }
 }
+
+export function sendLoginCredentials(params) {
+    return dispatch => {
+        dispatch({
+            type: "FETCH_SESSION",
+            payload: axios.post("http://localhost:3000/sessions", params)
+        })
+    }
+}
