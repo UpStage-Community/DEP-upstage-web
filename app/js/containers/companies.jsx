@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { getCompanies } from 'api/index'
+import { getCompanies } from 'actions/index'
 
 import Company from 'stupid_components/company'
 

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 const initialLoginState = {
-    open: true,
+    open: false,
     errors: [],
     email: "",
     password: ""
@@ -20,6 +20,8 @@ function loginModal(state=initialLoginState, action) {
             return Object.assign({}, state, {password: action.value})
         case "FETCH_SESSION_REJECTED":
             return Object.assign({}, state, {errors: [action.payload.response.data.errors]})
+        case "FETCH_SESSION_FULFILLED":
+            return Object.assign({}, initialLoginState)
         default: 
             return state
     }

@@ -4,10 +4,11 @@ import { bindActionCreators } from 'redux'
 import Modal from 'react-modal'
 
 import { closeLoginModal } from 'actions/navigation'
-import { sendLoginCredentials } from 'api/index'
+import { sendLoginCredentials } from 'actions/index'
 import { loginPasswordChanged, loginEmailChanged } from 'actions/index'
 
 import StandardModal from 'modals/standard-modal'
+import Button from 'stupid_components/button'
 
 import 'styles/login'
 
@@ -37,9 +38,9 @@ export default class LoginModal extends React.Component {
         if (this.props.errors) {
             return (
                 <div>
-                    { this.props.errors.map ((error) => {
+                    { this.props.errors.map ((error, index) => {
                         return (
-                            <div key={error} className="error">
+                            <div key={index} className="error">
                                 {error}
                             </div>
                         )
@@ -49,7 +50,8 @@ export default class LoginModal extends React.Component {
         }
     }
 
-    submitLogin() {
+    submitLogin(e) {
+        e.preventDefault()
         const params = {
             "session": {
                 "email": this.props.email,
@@ -75,17 +77,18 @@ export default class LoginModal extends React.Component {
                 closeMethod={ this.props.closeLoginModal }
                 buttonText="SUBMIT"
                 buttonMethod={ this.submitLogin }>
-                <div className="login-content" >
+                <form className="login-content" onSubmit={this.submitLogin} >
                     <label className="label">
                         E-mail
-                        <input className="input" onChange={this.emailChange} value={this.props.email}/>
+                        <input className="input" name="email" onChange={this.emailChange} value={this.props.email}/>
                     </label>
                     <label className="label">
                         Password
-                        <input className="input" type="password" onChange={this.passwordChange} value={this.props.password}/>
+                        <input className="input" name="password" type="password" onChange={this.passwordChange} value={this.props.password}/>
                     </label>
                     { this.errors() }
-                </div>
+                    <Button text="SUBMIT" className="submit-button" />
+                </form>
             </StandardModal>
         )
     }

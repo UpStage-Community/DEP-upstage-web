@@ -8,6 +8,8 @@ export default function navigation(state=initialState, action) {
             return Object.assign({}, state, {currentLocation: "Productions"})
         case "NAVIGATE_TO_COMPANIES":
             return Object.assign({}, state, {currentLocation: "Companies"})
+        case "FETCH_SESSION_FULFILLED":
+            return Object.assign({}, state)
         default: 
             return state
     }

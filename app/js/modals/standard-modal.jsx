@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react'
 import Modal from 'react-modal'
 
-import Button from 'stupid_components/button'
-
 import 'styles/modal'
 
 export default class StandardModal extends React.Component {
@@ -14,7 +12,6 @@ export default class StandardModal extends React.Component {
         return this.props.closeMethod
     }
     render() {
-        const buttonText = this.props.buttonText ? this.props.buttonText : "Okay"
         return (
             <Modal
                 className="standard-modal"
@@ -43,9 +40,7 @@ export default class StandardModal extends React.Component {
                 <div className="flexible-content">
                     {this.props.children}
                 </div>
-                <div className="button-container">
-                    <Button onClick={this.props.buttonMethod} text={buttonText} className="modal-button" />
-                </div>
+
             </Modal>
         )
     }
@@ -54,8 +49,6 @@ export default class StandardModal extends React.Component {
 StandardModal.propTypes = {
     open: React.PropTypes.bool.isRequired,
     closeMethod: React.PropTypes.func.isRequired,
-    buttonMethod: React.PropTypes.func,
     title: React.PropTypes.string.isRequired,
-    backgroundCloseDisabled: React.PropTypes.bool,
-    buttonText: PropTypes.string
+    backgroundCloseDisabled: React.PropTypes.bool
 }

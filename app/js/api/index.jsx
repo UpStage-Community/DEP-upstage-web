@@ -1,30 +1,28 @@
-import thunk from 'redux-thunk'
 import axios from 'axios'
-// import promise from 'redux-promise-middleware'
 
 export function getProductions(){
-    return dispatch => {
-        dispatch({
-            type: "FETCH_PRODUCTIONS",
-            payload: axios.get("http://localhost:3000/productions")
-        })
-    }
+    return axios({
+        requestId: 'productions',
+        method: 'get',
+        url: 'http://localhost:3000/productions',
+        cancelPreviousReqeust: true
+    })
 }
 
 export function getCompanies(){
-    return dispatch => {
-        dispatch({
-            type: "FETCH_COMPANIES",
-            payload: axios.get("http://localhost:3000/companies")
-        })
-    }
+    return axios({
+        requestId: 'companies',
+        method: 'get',
+        url: 'http://localhost:3000/companies',
+        cancelPreviousReqeust: true
+    })
 }
 
-export function sendLoginCredentials(params) {
-    return dispatch => {
-        dispatch({
-            type: "FETCH_SESSION",
-            payload: axios.post("http://localhost:3000/sessions", params)
-        })
-    }
+export function postSession(data) {    
+    return axios({
+        requestId: 'session',
+        method: 'post',
+        url: 'http://localhost:3000/sessions',
+        data
+    })
 }
