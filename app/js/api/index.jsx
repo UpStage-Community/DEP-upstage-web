@@ -26,3 +26,12 @@ export function postSession(data) {
         data
     })
 }
+
+export function deleteSession() {
+    const authToken = localStorage.getItem('user_token')
+    return axios({
+        requestId: 'session',
+        method: 'delete',
+        url: 'http://localhost:3000/sessions/' + authToken,
+    })
+}

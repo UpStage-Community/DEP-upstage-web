@@ -1,3 +1,6 @@
+import thunk from 'redux-thunk'
+import { logoutUser } from 'actions/index'
+
 export function navigateToProductions() {
     return {
         type: 'NAVIGATE_TO_PRODUCTIONS'
@@ -25,5 +28,31 @@ export function closeLoginModal() {
 export function openLoginModal() {
     return {
         type: 'OPEN_LOGIN_MODAL'
+    }
+}
+
+export function openHamburger() {
+    return {
+        type: 'HAMBURGER_OPENED'
+    }
+}
+
+export function closeHamburger() {
+    return {
+        type: 'HAMBURGER_CLOSED'
+    }
+}
+
+export function selectedLoginFromHamburger() {
+    return dispatch => {
+        dispatch(closeHamburger())
+        dispatch(openLoginModal())
+    }
+}
+
+export function selectedLogoutFromHamburger() {
+    return dispatch => {
+        dispatch(closeHamburger())
+        dispatch(logoutUser())
     }
 }

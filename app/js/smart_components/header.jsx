@@ -3,7 +3,8 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { openLoginModal } from 'actions/navigation'
+import Hamburger from 'smart_components/hamburger'
+
 import 'styles/header'
 
 function mapStoreToProps(store) {
@@ -12,11 +13,7 @@ function mapStoreToProps(store) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ openLoginModal }, dispatch)
-}
-
-@connect(mapStoreToProps, mapDispatchToProps)
+@connect(mapStoreToProps)
 
 export default class Header extends React.Component {
 
@@ -31,11 +28,11 @@ export default class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <div className="logo">
+                <div className="nav logo">
                     UpStage Community
                 </div>
-                <div className="right-area">
-                    <div className="navbar">
+                <div className="nav right-area">
+                    <div className="nav navbar">
                         <Link to="/productions" 
                             className={this.getClassFor("Productions")}>
                             Productions
@@ -45,12 +42,8 @@ export default class Header extends React.Component {
                             Companies
                         </Link>
                     </div>
-                    <a onClick={this.props.openLoginModal} >
-                        Log In
-                    </a>
-                    <div className="hamburger">
-                        <i className="fa fa-bars" aria-hidden="true" />
-                    </div>
+
+                    <Hamburger />
                 </div>
             </div>
         )

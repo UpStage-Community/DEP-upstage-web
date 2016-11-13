@@ -1,5 +1,6 @@
 const initialState = {
-    currentLocation: "Productions"
+    currentLocation: "Productions",
+    hamburgerOpen: false
 }
 
 export default function navigation(state=initialState, action) {
@@ -8,8 +9,10 @@ export default function navigation(state=initialState, action) {
             return Object.assign({}, state, {currentLocation: "Productions"})
         case "NAVIGATE_TO_COMPANIES":
             return Object.assign({}, state, {currentLocation: "Companies"})
-        case "FETCH_SESSION_FULFILLED":
-            return Object.assign({}, state)
+        case "HAMBURGER_OPENED":
+            return Object.assign({}, state, {hamburgerOpen: true})
+        case "HAMBURGER_CLOSED":
+            return Object.assign({}, state, {hamburgerOpen: false})
         default: 
             return state
     }
