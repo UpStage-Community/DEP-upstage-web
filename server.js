@@ -7,6 +7,7 @@ const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
+require('./third_party/config')
 
 const debug = process.env.NODE_ENV !== 'production';
 const port = debug ? 8080 : process.env.PORT;
