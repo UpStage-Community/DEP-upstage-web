@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.14.0",
     "css-loader": "^0.25.0",
+    "dotenv": "^2.0.0",
     "history": "^1.17.0",
     "less": "2.6.1",
     "less-loader": "2.2.2",
