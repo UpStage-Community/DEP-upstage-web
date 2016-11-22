@@ -1,5 +1,6 @@
 // The following was influenced by https://github.com/christianalfoni/webpack-express-boilerplate
 
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const webpack = require('webpack');
