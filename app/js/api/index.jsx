@@ -33,11 +33,20 @@ export function postSession(data) {
     })
 }
 
+export function getCurrentSession() {
+    const authToken = localStorage.getItem('user_token')
+    return axios({
+        requestId: 'session',
+        method: 'get',
+        url: `/sessions/${authToken}`
+    })
+}
+
 export function deleteSession() {
     const authToken = localStorage.getItem('user_token')
     return axios({
         requestId: 'session',
         method: 'delete',
-        url: '/sessions/' + authToken,
+        url: `/sessions/${authToken}`,
     })
 }

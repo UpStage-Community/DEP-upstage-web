@@ -6,16 +6,31 @@ import Header from 'smart_components/header'
 import BottomNavigation from 'smart_components/bottom_navigation'
 import LoginModal from 'modals/login'
 
+import { getCurrentUser } from 'actions/index'
+
 import 'styles/main'
 
 function mapStoreToProps(store) {
-    return { loginModalOpen: store.navigation.loginModalOpen }
+    return { 
+        loginModalOpen: store.navigation.loginModalOpen,
+        currentUser: store.currentUser
+    }
 }
 
-@connect(mapStoreToProps)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ getCurrentUser }, dispatch)
+}
+
+@connect(mapStoreToProps, mapDispatchToProps)
 
 export default class Layout extends React.Component {
+    loginRefresh() {
+        if (!this.props.currentUser && localStorage.getItem('user_token')) {
+            this.props.getCurrentUser()
+        }
+    }
     render() {
+        this.loginRefresh()
         return (
             <div className="layout">
                 <Header />

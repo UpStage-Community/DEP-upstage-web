@@ -80,7 +80,7 @@ export default class LoginModal extends React.Component {
                 <form className="login-content" onSubmit={this.submitLogin} >
                     <label className="label">
                         E-mail
-                        <input className="input" name="email" onChange={this.emailChange} value={this.props.email}/>
+                        <input className="input" name="email" onChange={this.emailChange} value={this.props.email} autoFocus/>
                     </label>
                     <label className="label">
                         Password

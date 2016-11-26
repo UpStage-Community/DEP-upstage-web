@@ -45,6 +45,17 @@ export function logoutUser() {
     }
 }
 
+export function getCurrentUser() {
+    return dispatch => {
+        dispatch({
+            type: "FETCH_CURRENT_USER",
+            payload: API.getCurrentSession()
+        }).then((response) => {
+            dispatch(reloadUser(response.action.payload.data))
+        })
+    }
+}
+
 export function loginPasswordChanged(value) {
     return {
         type: "LOGIN_PASSWORD_CHANGED",
@@ -56,6 +67,13 @@ export function loginEmailChanged(value) {
     return {
         type: "LOGIN_EMAIL_CHANGED",
         value
+    }
+}
+
+function reloadUser(user) {
+    return {
+        type: "RELOAD_USER",
+        user
     }
 }
 
