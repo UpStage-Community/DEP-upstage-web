@@ -34,6 +34,7 @@ export default class StandardModal extends React.Component {
                         overflow: 'visible'
                     }
                 }}>
+                <i className="fa fa-times exit-button" onClick={this.props.closeMethod}/>
                 <div className="title">
                     {this.props.title}
                 </div>
