@@ -1,4 +1,5 @@
 import thunk from 'redux-thunk'
+import { browserHistory } from 'react-router'
 
 import * as API from 'api/index'
 import * as LocalStorage from 'helpers/index'
@@ -68,6 +69,7 @@ function login(user) {
 
 function logout() {
     LocalStorage.logout()
+    browserHistory.push('/')
     return {
         type: "USER_LOGGED_OUT"
     }

@@ -5,7 +5,7 @@ export default function currentUser(state=initialState, action) {
         case "USER_LOGGED_IN":
             return Object.assign({}, action.user)
         case "USER_LOGGED_OUT":
-            return Object.assign({}, initialState)
+            return initialState
         default:
             return state
     }

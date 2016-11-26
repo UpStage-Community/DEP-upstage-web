@@ -10,6 +10,8 @@ const initialLoginState = {
 
 function loginModal(state=initialLoginState, action) {
     switch (action.type) {
+        case "USER_LOGGED_OUT":
+            return initialLoginState
         case "OPEN_LOGIN_MODAL":
             return Object.assign({}, state, {open: true})
         case "CLOSE_LOGIN_MODAL":
