@@ -41,6 +41,8 @@ export function logoutUser() {
             payload: API.deleteSession()
         }).then((response) => {
             dispatch(logout())
+        }).catch((error) => {
+            dispatch(logout())
         })
     }
 }
