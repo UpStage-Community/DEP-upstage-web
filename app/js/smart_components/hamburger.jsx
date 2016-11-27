@@ -6,7 +6,8 @@ import { Link } from 'react-router'
 import { openHamburger, 
     closeHamburger, 
     selectedLoginFromHamburger, 
-    selectedLogoutFromHamburger
+    selectedLogoutFromHamburger,
+    selectedSignUpFromHamburger
 } 
     from 'actions/navigation'
 
@@ -24,7 +25,8 @@ function mapDispatchToProps(dispatch) {
         openHamburger, 
         closeHamburger, 
         selectedLoginFromHamburger,
-        selectedLogoutFromHamburger
+        selectedLogoutFromHamburger,
+        selectedSignUpFromHamburger
     }, dispatch)
 }
 
@@ -54,7 +56,7 @@ export default class Hamburger extends React.Component {
         return (
             <span>
                 <a onClick={this.props.selectedLoginFromHamburger}>Log In</a>
-                <Link to="sign-up" onClick={this.props.closeHamburger}>Sign Up</Link>
+                <a onClick={this.props.selectedSignUpFromHamburger}>Sign Up</a>
             </span>
         )
     }

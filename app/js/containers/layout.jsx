@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import Header from 'smart_components/header'
 import BottomNavigation from 'smart_components/bottom_navigation'
 import LoginModal from 'modals/login'
+import UserRegistrationModal from 'modals/user-registration'
 
 import { getCurrentUser } from 'actions/index'
 
@@ -12,7 +13,6 @@ import 'styles/main'
 
 function mapStoreToProps(store) {
     return { 
-        loginModalOpen: store.navigation.loginModalOpen,
         currentUser: store.currentUser
     }
 }
@@ -40,6 +40,7 @@ export default class Layout extends React.Component {
                 <BottomNavigation />
 
                 <LoginModal />
+                <UserRegistrationModal />
             </div>
         )
     }

@@ -31,6 +31,18 @@ export function openLoginModal() {
     }
 }
 
+export function openUserRegistrationModal() {
+    return {
+        type: 'OPEN_USER_REGISTRATION_MODAL'
+    }
+}
+
+export function closeUserRegistrationModal() {
+    return {
+        type: 'CLOSE_USER_REGISTRATION_MODAL'
+    }
+}
+
 export function openHamburger() {
     return {
         type: 'HAMBURGER_OPENED'
@@ -54,5 +66,12 @@ export function selectedLogoutFromHamburger() {
     return dispatch => {
         dispatch(closeHamburger())
         dispatch(logoutUser())
+    }
+}
+
+export function selectedSignUpFromHamburger() {
+    return dispatch=> {
+        dispatch(closeHamburger())
+        dispatch(openUserRegistrationModal())
     }
 }
