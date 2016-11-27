@@ -5,6 +5,8 @@ const initialState = {
 
 export default function navigation(state=initialState, action) {
     switch (action.type) {
+        case "NAVIGATE_TO_USER_REGISTRATION":
+            return Object.assign({}, state, {currentLocation: null})
         case "NAVIGATE_TO_PRODUCTIONS":
             return Object.assign({}, state, {currentLocation: "Productions"})
         case "NAVIGATE_TO_COMPANIES":

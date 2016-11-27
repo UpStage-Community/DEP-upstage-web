@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router'
 
 import { openHamburger, 
     closeHamburger, 
     selectedLoginFromHamburger, 
-    selectedLogoutFromHamburger } 
+    selectedLogoutFromHamburger
+} 
     from 'actions/navigation'
 
 import 'styles/hamburger'
@@ -50,7 +52,10 @@ export default class Hamburger extends React.Component {
             )
         }
         return (
-            <a onClick={this.props.selectedLoginFromHamburger}>Log In</a>
+            <span>
+                <a onClick={this.props.selectedLoginFromHamburger}>Log In</a>
+                <Link to="sign-up" onClick={this.props.closeHamburger}>Sign Up</Link>
+            </span>
         )
     }
 

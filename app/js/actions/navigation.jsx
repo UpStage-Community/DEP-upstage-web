@@ -13,9 +13,9 @@ export function navigateToCompanies() {
     }
 }
 
-export function navigateToLogin() {
+export function navigateToUserRegistration() {
     return {
-        type: 'NAVIGATE_TO_LOGIN'
+        type: 'NAVIGATE_TO_USER_REGISTRATION'
     }
 }
 

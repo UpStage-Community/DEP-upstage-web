@@ -6,11 +6,12 @@ import { bindActionCreators } from 'redux'
 import Layout from 'containers/layout'
 import ProductionsPage from 'containers/productions'
 import CompaniesPage from 'containers/companies'
+import RegistrationPage from 'containers/user_registration'
 
-import { navigateToProductions, navigateToCompanies, navigateToLogin } from 'actions/navigation'
+import { navigateToProductions, navigateToCompanies, navigateToUserRegistration } from 'actions/navigation'
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ navigateToProductions, navigateToCompanies, navigateToLogin }, dispatch)
+    return bindActionCreators({ navigateToProductions, navigateToCompanies, navigateToUserRegistration }, dispatch)
 }
 
 @connect(null, mapDispatchToProps)
@@ -23,6 +24,7 @@ export default class Routes extends React.Component {
                     <IndexRedirect to="productions" />
                     <Route path="productions" component={ProductionsPage} onEnter={ this.props.navigateToProductions }/>
                     <Route path="companies" component={CompaniesPage} onEnter={ this.props.navigateToCompanies } />
+                    <Route path="sign-up" component={RegistrationPage} onEnter={ this.props.navigateToUserRegistration } />
                 </Route>
             </Router>
         )
