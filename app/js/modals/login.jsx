@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { closeLoginModal } from 'actions/navigation'
-import { sendLoginCredentials } from 'actions/index'
-import { loginPasswordChanged, loginEmailChanged } from 'actions/index'
+import { sendLoginCredentials } from 'actions/users'
+import { loginPasswordChanged, loginEmailChanged } from 'actions/users'
 
 import StandardModal from 'modals/standard-modal'
 import Button from 'stupid_components/button'

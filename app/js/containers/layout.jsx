@@ -7,7 +7,7 @@ import BottomNavigation from 'smart_components/bottom_navigation'
 import LoginModal from 'modals/login'
 import UserRegistrationModal from 'modals/user-registration'
 
-import { getCurrentUser } from 'actions/index'
+import { getCurrentUser } from 'actions/users'
 
 import 'styles/main'
 

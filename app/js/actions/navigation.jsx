@@ -1,5 +1,5 @@
 import thunk from 'redux-thunk'
-import { logoutUser } from 'actions/index'
+import { logoutUser } from 'actions/users'
 
 export function navigateToProductions() {
     return {
