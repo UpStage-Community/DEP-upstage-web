@@ -2,7 +2,7 @@ import React, { Proptypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators} from 'redux'
 
-import { closeUserRegistrationModal } from 'actions/navigation'
+import { closeUserRegistrationModal, swtichToLoginModal } from 'actions/navigation'
 import { 
     registerUser,
     userRegFirstNameChanged,
@@ -26,6 +26,7 @@ function mapStoreToProps(store) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         closeUserRegistrationModal,
+        swtichToLoginModal,
         registerUser,
         userRegFirstNameChanged,
         userRegLastNameChanged,
@@ -50,6 +51,7 @@ export default class UserRegistrationModal extends React.Component {
         this.passwordConfirmationChange = this.passwordConfirmationChange.bind(this)
         this.urlChange = this.urlChange.bind(this)
         this.bioChange = this.bioChange.bind(this)
+        this.openLoginModal = this.openLoginModal.bind(this)
     }
 
     submitRegistration(e) {
@@ -94,6 +96,11 @@ export default class UserRegistrationModal extends React.Component {
 
     bioChange(e) {
         this.props.userRegBioChanged(e.target.value)
+    }
+
+    openLoginModal(e) {
+        e.preventDefault()
+        this.props.swtichToLoginModal()
     }
 
     render() {
@@ -156,6 +163,9 @@ export default class UserRegistrationModal extends React.Component {
                     </label>
                     <Button text="SUBMIT" className="submit-button" />
                 </form>
+                <div className="center-link">
+                    <a onClick={this.openLoginModal}>Already registered? Click here to Log In.</a>
+                </div>
             </StandardModal>
         )
     }

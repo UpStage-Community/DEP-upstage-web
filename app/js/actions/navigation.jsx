@@ -43,6 +43,20 @@ export function closeUserRegistrationModal() {
     }
 }
 
+export function switchToUserRegistrationModal() {
+    return dispatch => {
+        dispatch(closeLoginModal())
+        dispatch(openUserRegistrationModal())
+    }
+}
+
+export function swtichToLoginModal() {
+    return dispatch => {
+        dispatch(closeUserRegistrationModal())
+        dispatch(openLoginModal())
+    }
+}
+
 export function openHamburger() {
     return {
         type: 'HAMBURGER_OPENED'

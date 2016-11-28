@@ -2,9 +2,11 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { closeLoginModal } from 'actions/navigation'
-import { sendLoginCredentials } from 'actions/users'
-import { loginPasswordChanged, loginEmailChanged } from 'actions/users'
+import { closeLoginModal, switchToUserRegistrationModal } from 'actions/navigation'
+import { sendLoginCredentials,
+    loginPasswordChanged, 
+    loginEmailChanged
+} from 'actions/users'
 
 import StandardModal from 'modals/standard-modal'
 import Button from 'stupid_components/button'
@@ -18,9 +20,10 @@ function mapStoreToProps(store) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({ 
         closeLoginModal,
+        switchToUserRegistrationModal,
         loginPasswordChanged,
         loginEmailChanged,
-        sendLoginCredentials,
+        sendLoginCredentials
     }, dispatch)
 }
 
@@ -32,6 +35,7 @@ export default class LoginModal extends React.Component {
         this.emailChange = this.emailChange.bind(this)
         this.passwordChange = this.passwordChange.bind(this)
         this.submitLogin = this.submitLogin.bind(this)
+        this.openRegistrationModal = this.openRegistrationModal.bind(this)
     }
     errors() {
         if (this.props.errors) {
@@ -68,6 +72,11 @@ export default class LoginModal extends React.Component {
         this.props.loginPasswordChanged(e.target.value)
     }
 
+    openRegistrationModal(e) {
+        e.preventDefault()
+        this.props.switchToUserRegistrationModal()
+    }
+
     render(){
         return (
             <StandardModal 
@@ -87,6 +96,9 @@ export default class LoginModal extends React.Component {
                     { this.errors() }
                     <Button text="SUBMIT" className="submit-button" />
                 </form>
+                <div className="center-link">
+                    <a onClick={this.openRegistrationModal }>New to Upstage? Click Here to Register.</a>
+                </div>
             </StandardModal>
         )
     }
