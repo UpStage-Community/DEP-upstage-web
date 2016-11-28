@@ -50,3 +50,12 @@ export function deleteSession() {
         url: `/sessions/${authToken}`,
     })
 }
+
+export function createUser(data) {
+    return axios({
+        requestId: 'users',
+        method: 'post',
+        url: '/users',
+        data
+    })
+}

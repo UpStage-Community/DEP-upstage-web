@@ -1,3 +1,71 @@
+import thunk from 'redux-thunk'
+import { browserHistory } from 'react-router'
+
+import * as API from 'api/index'
+import * as LocalStorage from 'helpers/index'
+
+export function registerUser(data) {
+    return dispatch => {
+        dispatch({
+            type: "FETCH_CREATE_USER",
+            payload: API.createUser(data)
+        }).then((response) => {
+            dispatch(login(response.action.payload.data))
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+}
+
+export function userRegFirstNameChanged(value) {
+    return {
+        type: "USER_REG_FIRST_NAME_CHANGED",
+        value
+    }
+}
+
+export function userRegLastNameChanged(value) {
+    return {
+        type: "USER_REG_LAST_NAME_CHANGED",
+        value
+    }
+}
+
+export function userRegEmailChanged(value) {
+    return {
+        type: "USER_REG_EMAIL_CHANGED",
+        value
+    }
+}
+
+export function userRegPasswordChanged(value) {
+    return {
+        type: "USER_REG_PASSWORD_CHANGED",
+        value
+    }
+}
+
+export function userRegPasswordConfirmationChanged(value) {
+    return {
+        type: "USER_REG_PASSWORD_CONFIRMATION_CHANGED",
+        value
+    }
+}
+
+export function userRegUrlChanged(value) {
+    return {
+        type: "USER_REG_URL_CHANGED",
+        value
+    }
+}
+
+export function userRegBioChanged(value) {
+    return {
+        type: "USER_REG_BIO_CHANGED",
+        value
+    }
+}
+
 export function sendLoginCredentials(data) {
     return dispatch => {
         dispatch({
@@ -5,7 +73,9 @@ export function sendLoginCredentials(data) {
             payload: API.postSession(data)
         }).then((response) => {
             dispatch(login(response.action.payload.data))
-        })
+        }).catch((error) => {
+            console.log(error)
+        }) 
     }
 }
 

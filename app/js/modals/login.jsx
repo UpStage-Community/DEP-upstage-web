@@ -74,8 +74,7 @@ export default class LoginModal extends React.Component {
                 open={this.props.open} 
                 title="Log In"
                 closeMethod={ this.props.closeLoginModal }
-                buttonText="SUBMIT"
-                buttonMethod={ this.submitLogin }>
+                buttonText="SUBMIT">
                 <form className="login-content" onSubmit={this.submitLogin} >
                     <label className="label">
                         E-mail
